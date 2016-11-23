@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>The World - @ViewBag.Title</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/lib/bootswatch/yeti/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div id="sidebar">
+        <img class="headshot" alt="headshot" src="~/images/legend_of_the_cryptids_by_anotherwanderer-d87p00g.jpg" />
+        <span id="username">Samantha Hastings</span>
+        <ul class="nav">
+            <li class="active"><a asp-controller="App" asp-action="Index">Home</a></li>
+            <li><a asp-controller="App" asp-action="About">About</a></li>
+            <li><a as asp-controller="App" asp-action="Contact">Contact</a></li>
+        </ul>
+    </div>
+    <div id="wrapper">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav navbar-left">
+                    <li>
+                        <button id="sidebarToggle" class="btn btn-primary btn-sm">
+                            <i class="fa fa-angle-double-left"></i>
+                        </button>
+                    </li>
+                    <li><a asp-controller="App" asp-action="Index">The World</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    
+                    <li><a href="#"><i class="fa fa-save"></i>Save</a></li>
+                    <li><a href="#"><i class="fa fa-print"></i>Print</a></li>
+                </ul>
+                
+            </div>
+        </nav>
+        <div id="main" class="container-fluid">
+            
+            @RenderBody()
+        </div>
+
+        <footer id="footer" class="container-fluid">
+            <p class="text-primary"># 2015 The World App</p>
+        </footer>
+    </div>
+    <script type="text/javascript" src="~/lib/jquery/dist/jquery.js"></script>
+    @RenderSection("scripts", false)
+
+    <script type="text/javascript" src="~/js/site.js">
+
+    </script>
+</body>
+</html>
